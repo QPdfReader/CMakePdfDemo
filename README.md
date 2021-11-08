@@ -15,6 +15,16 @@ vs2019编译器（3rdparty里是msvc编译的，所以本工程也得是vs2019�
 	set(Qt5_DIR "C:\\Qt\\5.15.2\\msvc2019_64\\lib\\cmake\\Qt5")
 ```
 
+# 编译
+```shell
+git clone https://github.com/QPdfReader/CMakePdfDemo.git
+cd CMakePdfDemo
+mkdir build
+cd build
+cmake ../
+msbuild CMakePdfDemo.sln
+```
+
 ## 编译后需要拷贝运行后需要提示的
 
 - Qt5Widgets.dll

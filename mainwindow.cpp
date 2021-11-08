@@ -2,8 +2,21 @@
 #include "ui_mainwindow.h"
 #include <QPainter>
 #include <QDebug>
+#include <private/qabstractstate_p.h>
+#include <private/qobject_p.h>
+#include <private/qabstractitemmodel_p.h>
 
 #include "3rdparty/pdfium-win-x64/include/fpdfview.h"
+
+class QPdfBookmarkModelPrivate : public QAbstractItemModelPrivate
+{
+public:
+	QPdfBookmarkModelPrivate()
+		: QAbstractItemModelPrivate()
+
+	{
+	}
+};
 
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),

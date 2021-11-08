@@ -26,6 +26,7 @@ endif()
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 get_target_property(QtCore_location Qt5::Widgets LOCATION)
 
+
 find_package(Qt5 COMPONENTS Core REQUIRED)
 get_target_property(QtCore_location Qt5::Core LOCATION)
 
@@ -38,7 +39,7 @@ add_executable(CMakePdfDemo
 
 find_package(PDFium)
 
-target_link_libraries(CMakePdfDemo Qt5::Widgets Qt5::Core pdfium)
+target_link_libraries(CMakePdfDemo Qt5::Widgets Qt5::Core Qt5::GuiPrivate Qt5::CorePrivate pdfium)
 
 #todo windows copy
 add_custom_command(TARGET ${PROJECT_NAME}
