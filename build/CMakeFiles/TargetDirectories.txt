@@ -1,3 +1,0 @@
-C:/Users/zhangpf/Project/CMakePdfDemo/build/CMakeFiles/CMakePdfDemo.dir
-C:/Users/zhangpf/Project/CMakePdfDemo/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/zhangpf/Project/CMakePdfDemo/build/CMakeFiles/ZERO_CHECK.dir
