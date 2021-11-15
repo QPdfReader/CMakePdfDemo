@@ -2,21 +2,9 @@
 #include "ui_mainwindow.h"
 #include <QPainter>
 #include <QDebug>
-#include <private/qabstractstate_p.h>
-#include <private/qobject_p.h>
-#include <private/qabstractitemmodel_p.h>
 
-#include "3rdparty/pdfium-win-x64/include/fpdfview.h"
 
-class QPdfBookmarkModelPrivate : public QAbstractItemModelPrivate
-{
-public:
-	QPdfBookmarkModelPrivate()
-		: QAbstractItemModelPrivate()
-
-	{
-	}
-};
+#include "qpdfdocument.h"
 
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -33,16 +21,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::testPdf()
 {
-	FPDF_InitLibrary();
-	FPDF_DOCUMENT doc;
-	FPDF_PAGE page;
-	doc = FPDF_LoadDocument("C:\\Users\\zhangpf\\Project\\KTodo\\build\\1.pdf", nullptr);
-	if (doc == NULL)
-	{
-		qDebug() << "123" << endl;
-	}
-	int numPages = FPDF_GetPageCount(doc);
-	printf("document has %d pages\n", numPages);
-
-	FPDF_DestroyLibrary();
+	QPdfDocument pdfDoc;
+	QPdfDocument::DocumentError docError = pdfDoc.load("C:\\Users\\zhangpf\\Project\\KTodo\\build\\1.pdf");
+	qDebug() << docError << endl;
+	int nCount = pdfDoc.pageCount();
+	qDebug() << nCount << endl;
 }
